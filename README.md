@@ -1,5 +1,39 @@
 # ArisIA
-Tu asistente de IA 100% local y privado
+Tu asistente de IA 100% local y privado 
+Características principales
+Compatibilidad multiplataforma: Soporta Ubuntu/Debian, Fedora/RHEL y Arch/Manjaro
+
+Instalación completa:
+
+Crea entorno virtual Python
+
+Instala dependencias del sistema y Python
+
+Descarga modelos de lenguaje (~300MB)
+
+Configura accesos directos
+
+Componentes técnicos interesantes
+Detección automática de distribución: Usa /etc/os-release para identificar el sistema
+
+Manejo de dependencias: Instala paquetes específicos para cada distro
+
+Modelo de lenguaje: Descarga un modelo GPT-2 en español desde Hugging Face
+
+Configuración de accesos:
+
+Crea un archivo .desktop para el lanzador gráfico
+
+Añade alias en .bashrc y .zshrc
+
+¿Para qué podría servirte?
+Como base para desarrollar tu propia aplicación de IA local
+
+Para aprender cómo implementar un instalador multiplataforma en Python
+
+Como ejemplo de integración con modelos de Hugging Face
+
+Para ver cómo gestionar dependencias en diferentes distros Linux
 
 # Para Instalar ArisIA necesitas ejecutar este comando en la terminal (Debes tener el setup descargado)
 python3 setup.py
