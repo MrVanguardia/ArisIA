@@ -1,13 +1,13 @@
 #!/bin/bash
-# INSTALADOR ARISIA PARA UBUNTU/DEBIAN
-# Versión 2.1 - Compatible con Ubuntu 20.04+ y Debian 11+
+# INSTALADOR ARISIA PARA FEDORA/RHEL
+# Versión 2.2 - Compatible con Fedora 36+ y RHEL 9+
 
 # ===== CONFIGURACIÓN =====
-VERSION="2.1"
+VERSION="2.2"
 DIR_INSTALACION="$HOME/.arisia"
 REPO_URL="https://github.com/tu_usuario/arisia.git"
 MODELO_URL="https://huggingface.co/datificate/gpt2-small-spanish"
-PYTHON_VER="python3.10"
+PYTHON_VER="python3.11"
 
 # Colores
 ROJO='\033[0;31m'
@@ -19,23 +19,25 @@ NC='\033[0m'
 # ===== FUNCIONES =====
 instalar_dependencias() {
     echo -e "${AZUL}[+] Actualizando paquetes...${NC}"
-    sudo apt-get update > /dev/null 2>&1
+    sudo dnf update -y > /dev/null 2>&1
 
     local dependencias=(
         git
         python3-pip
-        python3-venv
-        python3-dev
-        build-essential
-        libopenblas-dev
+        python3-virtualenv
+        python3-devel
+        gcc-c++
+        make
+        cmake
+        openblas-devel
     )
 
     echo -e "${AZUL}[+] Instalando dependencias del sistema...${NC}"
-    sudo apt-get install -y "${dependencias[@]}" > /dev/null 2>&1
+    sudo dnf install -y "${dependencias[@]}" > /dev/null 2>&1
 
-    if ! command -v $PYTHON_VER &> /dev/null; then
-        echo -e "${AMARILLO}[!] Python 3.10 no detectado, instalando...${NC}"
-        sudo apt-get install -y $PYTHON_VER > /dev/null 2>&1
+    # Para RHEL/CentOS 8 necesitamos habilitar PowerTools
+    if grep -q "CentOS Linux 8" /etc/redhat-release; then
+        sudo dnf config-manager --set-enabled powertools > /dev/null 2>&1
     fi
 }
 
@@ -47,16 +49,23 @@ crear_entorno_virtual() {
 
 instalar_paquetes_python() {
     local paquetes=(
-        torch==2.0.1
-        transformers==4.30.2
+        torch==2.1.0
+        transformers==4.33.1
         sentencepiece==0.1.99
-        fastapi==0.95.2
-        uvicorn==0.22.0
+        fastapi==0.103.1
+        uvicorn==0.23.2
     )
 
     echo -e "${AZUL}[+] Instalando paquetes Python...${NC}"
     pip install --upgrade pip > /dev/null 2>&1
-    pip install "${paquetes[@]}" > /dev/null 2>&1
+    
+    # Instalación optimizada para arquitectura
+    local arch=$(uname -m)
+    if [ "$arch" == "x86_64" ]; then
+        pip install --pre torch --index-url https://download.pytorch.org/whl/nightly/cpu > /dev/null 2>&1
+    else
+        pip install "${paquetes[@]}" > /dev/null 2>&1
+    fi
 }
 
 clonar_repositorio() {
@@ -113,6 +122,9 @@ EOL
     # Permisos
     chmod +x "$DIR_INSTALACION"/interfaces/*.py
     chmod +x ~/.local/share/applications/arisia.desktop
+    
+    # Actualizar base de datos de aplicaciones
+    update-desktop-database ~/.local/share/applications > /dev/null 2>&1
 }
 
 # ===== EJECUCIÓN PRINCIPAL =====
@@ -124,12 +136,12 @@ echo "  ███████║██████╔╝██║█████
 echo "  ██╔══██║██╔══██╗██║╚════██║██║██╔══██║"
 echo "  ██║  ██║██║  ██║██║███████║██║██║  ██║"
 echo "  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝╚═╝  ╚═╝"
-echo -e "${NC}${AMARILLO}          Instalador para Ubuntu/Debian v$VERSION${NC}"
+echo -e "${NC}${AMARILLO}          Instalador para Fedora/RHEL v$VERSION${NC}"
 echo -e "${AZUL}===============================================${NC}"
 
 # Verificar sistema
-if ! grep -qEi "(ubuntu|debian)" /etc/*release; then
-    echo -e "${ROJO}[ERROR] Este script solo funciona en Ubuntu/Debian${NC}"
+if ! grep -qEi "fedora|rhel|centos|almalinux|rocky" /etc/*release; then
+    echo -e "${ROJO}[ERROR] Este script solo funciona en Fedora/RHEL y derivados${NC}"
     exit 1
 fi
 
@@ -144,6 +156,6 @@ configurar_accesos
 echo -e "\n${VERDE}[✔] Instalación completada!${NC}"
 echo -e "\n${AZUL}Opciones de uso:${NC}"
 echo -e "  - Menú aplicaciones: Busca 'ARISIA'"
-echo -e "  - Terminal: Ejecuta 'arisia'"
+echo -e "  - Terminal: Ejecuta 'arisia' (en nueva sesión)"
 echo -e "  - API REST: ${DIR_INSTALACION}/venv/bin/python ${DIR_INSTALACION}/interfaces/api.py"
 echo -e "\n${AMARILLO}Reinicia tu terminal para usar el comando 'arisia'${NC}"
