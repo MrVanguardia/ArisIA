@@ -59,3 +59,9 @@ chmod +x install_local.sh
 # Verifica la instalación:
 ls ~/.arisia/models/base/  # Deberías ver los archivos del modelo
 python3 -c "from transformers import GPT2LMHeadModel; print('✔ IA lista!')"
+
+# Dar permisos de ejecución (si no los tiene)
+chmod +x setup.py
+
+# Ejecutar (como usuario normal, NO root)
+./setup.py
