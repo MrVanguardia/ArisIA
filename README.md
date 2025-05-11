@@ -65,3 +65,10 @@ chmod +x setup.py
 
 # Ejecutar (como usuario normal, NO root)
 ./setup.py
+
+# Instalar pip
+sudo apt-get update
+sudo apt-get install -y python3-pip python3-venv
+sudo apt-get install -y git python3-dev build-essential curl
+python3 -m pip install --user --upgrade pip setuptools wheel
+python3 -m pip install --user
