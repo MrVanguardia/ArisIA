@@ -6,9 +6,11 @@ Compatibilidad multiplataforma: Soporta Ubuntu/Debian, Fedora/RHEL y Arch/Manjar
 # Instalación completa:
 
 Primero ejecuta el setup.py como lo harías normalmente
+
 python3 setup.py install --user
 
 Una vez que termine la instalación principal, ejecuta el script de instalación manual
+
 python3 install_python_deps.py
 
 # Instalar pip 
