@@ -35,26 +35,22 @@ Como ejemplo de integración con modelos de Hugging Face
 
 Para ver cómo gestionar dependencias en diferentes distros Linux
 
-# Para Instalar ArisIA necesitas ejecutar este comando en la terminal (Debes tener el setup descargado)
-python3 setup.py
+# Instalar pip 
+sudo apt-get update
 
-# Verifica que el modelo se descargó correctamente
-ls ~/.arisia/models/base/
+sudo apt-get install -y python3-pip python3-venv
+
+sudo apt-get install -y git python3-dev build-essential curl
+
+python3 -m pip install --user --upgrade pip setuptools wheel
+
+python3 -m pip install --user
 
 # Prueba que el comando funciona
 arisia --version
 
-# Crea un entorno virtual (evita problemas de permisos)
-python3 -m venv ~/.arisia_venv
-source ~/.arisia_venv/bin/activate
-
 # Instala en modo usuario
 python3 setup.py install --user
-
-# Descarga este instalador simplificado:
-wget https://raw.githubusercontent.com/tu_usuario/arisia/main/install_local.sh
-chmod +x install_local.sh
-./install_local.sh
 
 # Verifica la instalación:
 ls ~/.arisia/models/base/  # Deberías ver los archivos del modelo
@@ -66,13 +62,3 @@ chmod +x setup.py
 # Ejecutar (como usuario normal, NO root)
 ./setup.py
 
-# Instalar pip
-sudo apt-get update
-
-sudo apt-get install -y python3-pip python3-venv
-
-sudo apt-get install -y git python3-dev build-essential curl
-
-python3 -m pip install --user --upgrade pip setuptools wheel
-
-python3 -m pip install --user
