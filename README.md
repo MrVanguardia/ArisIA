@@ -3,37 +3,13 @@ Tu asistente de IA 100% local y privado
 Características principales
 Compatibilidad multiplataforma: Soporta Ubuntu/Debian, Fedora/RHEL y Arch/Manjaro
 
-Instalación completa:
+# Instalación completa:
 
-Crea entorno virtual Python
+Primero ejecuta el setup.py como lo harías normalmente
+python3 setup.py install --user
 
-Instala dependencias del sistema y Python
-
-Descarga modelos de lenguaje (~300MB)
-
-Configura accesos directos
-
-Componentes técnicos interesantes
-Detección automática de distribución: Usa /etc/os-release para identificar el sistema
-
-Manejo de dependencias: Instala paquetes específicos para cada distro
-
-Modelo de lenguaje: Descarga un modelo GPT-2 en español desde Hugging Face
-
-Configuración de accesos:
-
-Crea un archivo .desktop para el lanzador gráfico
-
-Añade alias en .bashrc y .zshrc
-
-¿Para qué podría servirte?
-Como base para desarrollar tu propia aplicación de IA local
-
-Para aprender cómo implementar un instalador multiplataforma en Python
-
-Como ejemplo de integración con modelos de Hugging Face
-
-Para ver cómo gestionar dependencias en diferentes distros Linux
+Una vez que termine la instalación principal, ejecuta el script de instalación manual
+python3 install_python_deps.py
 
 # Instalar pip 
 sudo apt-get update
