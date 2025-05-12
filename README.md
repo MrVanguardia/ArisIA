@@ -24,6 +24,21 @@ python3 -m pip install --user --upgrade pip setuptools wheel
 
 python3 -m pip install --user
 
+# Para Debian/Ubuntu:
+sudo apt-get install python3-tk
+
+# Para Fedora:
+sudo dnf install python3-tkinter
+
+# Para Arch Linux:
+sudo pacman -S tk
+
+# Para CentOS/RHEL:
+sudo yum install python3-tkinter
+
+# Verificar la instalación:
+python3 -m tkinter -c "tk._test()"
+
 # Prueba que el comando funciona
 arisia --version
 
