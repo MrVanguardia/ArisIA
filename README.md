@@ -59,6 +59,19 @@ python3 -c "from transformers import GPT2LMHeadModel; print('✔ IA lista!')"
 # Dar permisos de ejecución (si no los tiene)
 chmod +x setup.py
 
+# Reaunudar Instalacion Manual
+# Activa el entorno virtual
+source ~/.arisia/venv/bin/activate
+
+# Reanuda la instalación con más reintentos y tiempo de espera
+pip install --upgrade --retries 10 --timeout 120 \
+torch>=2.0.0 --index-url https://download.pytorch.org/whl/cpu \
+transformers>=4.30.0 \
+sentencepiece>=0.1.95 \
+fastapi>=0.95.0 \
+uvicorn>=0.21.0 \
+requests>=2.28.0
+
 # Ejecutar (como usuario normal, NO root)
 ./setup.py
 
