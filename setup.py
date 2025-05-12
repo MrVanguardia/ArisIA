@@ -40,6 +40,8 @@ class UniversalInstaller:
         
         print(f"\n🎉 ¡Instalación completada en {INSTALL_PATH}!")
         print("   Ejecuta 'arisia' en tu terminal o búscala en el menú de aplicaciones")
+        print("\n⚠️  IMPORTANTE: Ahora debes ejecutar el script de instalación manual de paquetes Python")
+        print("   que se te proporcionó junto con este instalador.")
 
     @staticmethod
     def install_essential_tools():
@@ -182,7 +184,7 @@ class UniversalInstaller:
 
     @staticmethod
     def setup_python_env():
-        """Configura el entorno virtual e instala paquetes Python"""
+        """Configura el entorno virtual"""
         venv_path = INSTALL_PATH / "venv"
         
         # Crear entorno virtual si no existe
@@ -190,40 +192,7 @@ class UniversalInstaller:
             print("🐍 Creando entorno virtual Python...")
             subprocess.run([sys.executable, "-m", "venv", str(venv_path)], check=True)
         
-        # Determinar el comando pip correcto según el SO
-        pip_cmd = str(venv_path / "bin" / "pip")
-        if sys.platform == "win32":
-            pip_cmd = str(venv_path / "Scripts" / "pip.exe")
-        
-        # Instalar paquetes con soporte multiplataforma
-        torch_pkg = "torch>=2.0.0"
-        if sys.platform == "linux" and platform.machine() == "x86_64":
-            torch_pkg += " --index-url https://download.pytorch.org/whl/cpu"
-        
-        requirements = [
-            torch_pkg,
-            "transformers>=4.30.0",
-            "sentencepiece>=0.1.95",
-            "fastapi>=0.95.0",
-            "uvicorn>=0.21.0",
-            "requests>=2.28.0"
-        ]
-        
-        print("📦 Instalando paquetes Python...")
-        try:
-            # Actualizar pip primero
-            subprocess.run([pip_cmd, "install", "--upgrade", "pip"], check=True)
-            
-            # Instalar paquetes uno por uno para mejor manejo de errores
-            for req in requirements:
-                print(f"  ➡ Instalando {req.split()[0]}...")
-                subprocess.run([pip_cmd, "install"] + req.split(), check=True)
-                
-        except subprocess.CalledProcessError as e:
-            print(f"❌ Error instalando paquetes Python: {e}")
-            print("ℹ️  Intenta ejecutar manualmente:")
-            print(f"    {pip_cmd} install {' '.join(requirements)}")
-            sys.exit(1)
+        print("⚠️  La instalación de paquetes Python se realizará manualmente después")
 
     @staticmethod
     def download_model():
@@ -315,7 +284,7 @@ def main():
         python_requires=PYTHON_REQUIRES,
         packages=find_packages(),
         include_package_data=True,
-        install_requires=[],  # Las dependencias se manejan en el entorno virtual
+        install_requires=[],  # Las dependencias se manejan manualmente
         entry_points={
             "console_scripts": [
                 f"{APP_NAME}={APP_NAME}.cli:main",
