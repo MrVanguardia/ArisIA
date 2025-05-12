@@ -39,6 +39,12 @@ sudo yum install python3-tkinter
 # Verificar la instalación:
 python3 -m tkinter -c "tk._test()"
 
+# Activa el entorno virtual
+source ~/.arisia/venv/bin/activate
+
+# Instala tkinter en el entorno virtual (aunque normalmente usa el del sistema)
+pip install tk
+
 # Prueba que el comando funciona
 arisia --version
 
