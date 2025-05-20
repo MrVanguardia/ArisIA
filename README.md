@@ -62,7 +62,7 @@ Asegurate de que el script tiene permisos de ejecución:
 chmod +x instalador.sh
 
 
-# 3 Si requiere permisos de raíz (sudo):
+# 3 requiere permisos de raíz (sudo):
 
 
 sudo ./installer.sh
