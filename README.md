@@ -3,7 +3,7 @@ Tu asistente de IA 100% local y privado
 Características principales
 Compatibilidad multiplataforma: Soporta Ubuntu/Debian, Fedora/RHEL y Arch/Manjaro
 
-# 1 Dependencias Instalares
+# 1 Instalar Dependencias
 
 sudo dnf install python3 python3-pip python3-devel # Python y pip
 sudo dnf install gcc g++ make # Compiladores para las dependencias de armas
