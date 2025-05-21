@@ -28,6 +28,8 @@ pip3 install regex # Mejora sobre el módulo 're' estar
 
 pip3 install tqdm # Barras de progreso
 
+pip install torch transformers sentencepiece
+
 # Ejecuta en Python
 
 importar nltk
@@ -37,7 +39,6 @@ nltk.download('punkt') # Tokenizador básico
 nltk.download('palabras de parada') # Palabras comunidades un ignorante en PNL
 
 nltk.download('wordnet') # Diccionario léxico
-
 
 importar numpy como np
 
