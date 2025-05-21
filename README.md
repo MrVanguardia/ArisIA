@@ -1,7 +1,7 @@
 # ArisIA
 Tu asistente de IA 100% local y privado 
 Características principales
-Compatibilidad multiplataforma: Soporta Ubuntu/Debian, Fedora/RHEL y Arch/Manjaro
+Compatibilidad multiplataforma: Soporta Ubuntu/Debian, Fedora y Arch
 
 # 1 Dependencias Instalares
 
