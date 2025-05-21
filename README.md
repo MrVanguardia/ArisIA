@@ -52,6 +52,11 @@ importar customtkinter como ctk
 
 imprimir("¡Todas las libertades se importaron correctamente!")
 
+# Requisitos Adicionales
+
+Para esta versión necesitarás instalar:
+
+pip install torch transformers
 
 # 2 Pasos correctos para ejecutar installer.sh:
 
