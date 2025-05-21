@@ -58,6 +58,20 @@ Para esta versión necesitarás instalar:
 
 pip install torch transformers
 
+# Activar el entorno virtual de ArisIA:
+
+ls -ld /opt/arisia/venv
+
+sudo chown -R $USER:$USER /opt/arisia/venv
+
+sudo chmod -R u+rwX /opt/arisia/venv
+
+source /opt/arisia/venv/bin/activate
+
+pip install --force-reinstall torch transformers
+
+pip install torch transformers
+
 # 2 Pasos correctos para ejecutar installer.sh:
 
 
