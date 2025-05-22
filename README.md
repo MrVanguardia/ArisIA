@@ -1,3 +1,4 @@
+![Logo que diga correctamente Vanguardia Studio 2 (1)](https://github.com/user-attachments/assets/cf0a8911-3190-489b-b3ef-8c762d71f1d1)
 # ArisIA
 Tu asistente de IA 100% local y privado 
 Características principales
