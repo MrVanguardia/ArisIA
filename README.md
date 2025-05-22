@@ -1,4 +1,4 @@
-![V (1)](https://github.com/user-attachments/assets/4e0b00ad-6cd7-47e2-8c0b-28d450d796dc)
+![V (1)](https://github.com/user-attachments/assets/479d9f6e-ba02-4e1e-9056-894fa9ec6682)
 # ArisIA
 Tu asistente de IA 100% local y privado 
 Características principales
