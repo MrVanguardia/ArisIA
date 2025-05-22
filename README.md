@@ -91,3 +91,14 @@ sudo ./installer.sh
 
 sudo arisia --uninstall
 
+# Desistalar modelos
+
+# Opción A: Borrar manualmente el modelo
+
+rm -rf ~/.cache/huggingface/hub/models--PlanTL-GOB-ES--bertin-gpt-j-6B
+
+(O usa sudo si los permisos lo requieren).
+
+# Opción B: Borrar toda la caché de Hugging Face (si no necesitas otros modelos)
+
+rm -rf ~/.cache/huggingface/
