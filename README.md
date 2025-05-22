@@ -28,7 +28,7 @@ pip3 install regex # Mejora sobre el módulo 're' estar
 
 pip3 install tqdm # Barras de progreso
 
-pip install torch transformers sentencepiece
+pip instala transformadores de antorcha pieza de sentencia
 
 # Ejecuta en Python
 
@@ -55,23 +55,23 @@ imprimir("¡Todas las libertades se importaron correctamente!")
 
 # Requisitos Adicionales
 
-Para esta versión necesitarás instalar:
+Para esta versión necesitamos instalar:
 
-pip install torch transformers
+pip insta transformadores de antorcha
 
 # Activar el entorno virtual de ArisIA:
 
-ls -ld /opt/arisia/venv
+ls -ld/opt/arisia/venv
 
-sudo chown -R $USER:$USER /opt/arisia/venv
+sudo chown -R $USUARIO:$USUARIO/opt/arisia/venv
 
-sudo chmod -R u+rwX /opt/arisia/venv
+sudo chmod -R u+rwX/opt/arisia/venv
 
-source /opt/arisia/venv/bin/activate
+fuente/opt/arisia/venv/bin/activate
 
-pip install --force-reinstall torch transformers
+pip install --forzar-reinstalar transformadores de antorcha
 
-pip install torch transformers
+pip insta transformadores de antorcha
 
 # 2 Pasos correctos para ejecutar installer.sh:
 
@@ -86,4 +86,8 @@ chmod +x instalador.sh
 
 
 sudo ./installer.sh
+
+# Para DESINSTALAR ARISIA
+
+sudo arisia --uninstall
 
