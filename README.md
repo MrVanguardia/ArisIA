@@ -1,19 +1,5 @@
 # ArisIA - Asistente IA para Linux 🤖
 
-## Instalación Rápida
-
-1. Descargar ArisIA:
-```bash
-git clone https://github.com/usuario/ArisIA.git
-cd ArisIA
-```
-
-2. Ejecutar el instalador:
-```bash
-sudo chmod +x install.sh
-sudo ./install.sh
-```
-
 ## Distribuciones Soportadas
 
 El instalador es compatible con las siguientes familias de distribuciones:
