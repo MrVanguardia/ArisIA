@@ -1,4 +1,5 @@
 # ArisIA - Asistente IA para Linux 🤖
+![ChatGPT Image 15 jun 2025, 03_55_27 p m](https://github.com/user-attachments/assets/1bdce5b1-8297-4fd3-9882-6b0b5b814b50)
 
 ## Distribuciones Soportadas
 
