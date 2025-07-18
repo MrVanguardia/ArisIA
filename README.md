@@ -8,14 +8,6 @@ Opcional
 mkdir -p tu directorio.arisia/interfaces
 ```
 
-# Copy the CLI file
-# After creating the file above, make it executable
-```bash
-Opcional
-chmod +x tu directorio.arisia/interfaces/cli.py
-```
-
-
 ## Distribuciones Soportadas
 
 El instalador es compatible con las siguientes familias de distribuciones:
