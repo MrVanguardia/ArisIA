@@ -1,21 +1,20 @@
 # ArisIA - Asistente IA para Linux 🤖
 ![ChatGPT Image 15 jun 2025, 03_55_27 p m](https://github.com/user-attachments/assets/1bdce5b1-8297-4fd3-9882-6b0b5b814b50)
 
+
 # Create the interfaces directory if it doesn't exist
 ```bash
-mkdir -p /home/mrvanguardia/.arisia/interfaces
+Opcional
+mkdir -p tu directorio.arisia/interfaces
 ```
 
 # Copy the CLI file
 # After creating the file above, make it executable
 ```bash
-chmod +x /home/mrvanguardia/.arisia/interfaces/cli.py
+Opcional
+chmod +x tu directorio.arisia/interfaces/cli.py
 ```
 
-# Ensure proper ownership
-```bash
-chown -R mrvanguardia:mrvanguardia /home/mrvanguardia/.arisia
-```
 
 ## Distribuciones Soportadas
 
